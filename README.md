@@ -1,33 +1,33 @@
 # Mini Website Analytics Tracker
 
-A simple analytics web application built with Java and Spring Boot.
-
-## Features
-
-- Tracks page views (home, about, contact, and custom pages)
-- Stores visit data using H2 database
-- Displays analytics in a dashboard:
-  - Total views
-  - Views today
-  - Page-specific view counts
-  - Recent visit history
-- Allows manual tracking via input form
-
-## Tech Stack
+A beginner-friendly web analytics dashboard built with:
 
 - Java
 - Spring Boot
-- Spring Data JPA
 - Thymeleaf
 - H2 Database
 
-## How It Works
+## Features
 
-When a page is visited or a custom path is submitted, the application records a page-view event with a timestamp.
+- Track page views
+- Dashboard with:
+  - Total views
+  - Views today
+  - Per-page statistics
+  - Recent visits
+- Manual tracking input
+- Input validation
 
-The backend processes these events and calculates analytics, which are displayed in the dashboard.
+## Tech Stack
 
-## Running the Project
+- Spring Boot
+- Spring Data JPA
+- Thymeleaf
+- H2 (in-memory database)
+
+## Run Locally
 
 ```bash
-mvn spring-boot:run
+git clone https://github.com/jony-info/mini-website-analytics-tracker.git
+cd mini-website-analytics-tracker
+./mvnw spring-boot:run
