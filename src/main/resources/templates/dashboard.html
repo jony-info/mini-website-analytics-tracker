@@ -62,7 +62,7 @@
 
         .dashboard-container {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-bottom: 40px;
         }
@@ -141,11 +141,6 @@
         <div class="card">
             <h2>Views Today</h2>
             <p th:text="${data.viewsToday}"></p>
-        </div>
-
-        <div class="card">
-            <h2>Main Page Views</h2>
-            <p th:text="${data.homeViews}"></p>
         </div>
 
         <div class="card">
