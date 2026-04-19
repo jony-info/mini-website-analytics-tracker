@@ -1,3 +1,7 @@
+## Live Demo
+
+[Open the app] https://mini-website-analytics-tracker.onrender.com/
+
 # Mini Website Analytics Tracker
 
 A beginner-friendly web analytics dashboard built with:
