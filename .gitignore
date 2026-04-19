@@ -1,0 +1,21 @@
+# Maven target folder
+target/
+
+# IDE files
+.vscode/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# H2 database files
+*.mv.db
+*.trace.db
+
+# Env files
+.env
