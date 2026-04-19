@@ -1,5 +1,6 @@
 package com.jony.ecommerce_dashboard.controller;
 
+import com.jony.ecommerce_dashboard.model.DashboardData;
 import com.jony.ecommerce_dashboard.service.DashboardService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,35 +18,33 @@ public class HomeController {
     }
 
     @GetMapping("/")
-    public String home(Model model) {
-        model.addAttribute("data", dashboardService.getDashboardData());
+    public String showDashboard(Model model) {
+        dashboardService.trackPageView("/");
+
+        DashboardData dashboardData = dashboardService.getDashboardData();
+        model.addAttribute("data", dashboardData);
+
         return "dashboard";
     }
 
-    @PostMapping("/track")
-    public String trackCustomPage(@RequestParam("pagePath") String pagePath) {
-
-        if (pagePath != null) {
-            pagePath = pagePath.trim();
-
-            // validation: must start with "/" and be longer than 1 character
-            if (pagePath.startsWith("/") && pagePath.length() > 1) {
-                dashboardService.trackPageView(pagePath);
-            }
-        }
-
-        return "redirect:/";
-    }
-
     @GetMapping("/about")
-    public String about() {
+    public String showAboutPage() {
         dashboardService.trackPageView("/about");
         return "about";
     }
 
     @GetMapping("/contact")
-    public String contact() {
+    public String showContactPage() {
         dashboardService.trackPageView("/contact");
         return "contact";
+    }
+
+    @PostMapping("/track")
+    public String trackCustomPage(@RequestParam String pagePath) {
+        if (pagePath != null && pagePath.startsWith("/")) {
+            dashboardService.trackPageView(pagePath);
+        }
+
+        return "redirect:/";
     }
 }

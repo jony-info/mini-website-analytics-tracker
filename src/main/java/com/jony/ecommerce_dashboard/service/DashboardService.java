@@ -30,6 +30,7 @@ public class DashboardService {
 
         long totalViews = pageViews.size();
         long viewsToday = 0;
+        long homeViews = 0;
         long aboutViews = 0;
         long contactViews = 0;
 
@@ -40,7 +41,9 @@ public class DashboardService {
 
             String path = pageView.getPagePath();
 
-            if (path.equals("/about")) {
+            if (path.equals("/")) {
+                homeViews++;
+            } else if (path.equals("/about")) {
                 aboutViews++;
             } else if (path.equals("/contact")) {
                 contactViews++;
@@ -58,7 +61,7 @@ public class DashboardService {
         return new DashboardData(
                 totalViews,
                 viewsToday,
-                0,
+                homeViews,
                 aboutViews,
                 contactViews,
                 recentVisits
