@@ -27,7 +27,7 @@ A beginner-friendly web analytics dashboard built with:
 - Spring Boot
 - Spring Data JPA
 - Thymeleaf
-- H2 (in-memory database)
+- H2
 
 ## Run Locally
 
